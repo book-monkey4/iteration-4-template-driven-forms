@@ -8,6 +8,10 @@
     [(ngModel)]="book.title"
     required
     #titleInput="ngModel">
+  <!-- ⚠️ Unterschied zum Buch:
+  Die Referenz `titleInput` zeigt auf die Direktive `ngModel`, nicht auf ein Control.
+  Zugriff auf das Control erhalten wir hier über die Property `control` auf `ngModel`.
+  Diese Änderung gilt auch für alle anderen Stellen in diesem Template. -->
   <bm-form-messages
     [control]="titleInput.control"
     controlName="title">
